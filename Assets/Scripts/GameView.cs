@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
@@ -8,10 +9,12 @@ using VisualNovel.Service;
 using TMPro;
 using UnityEngine.Video;
 
-public class GameView : MonoBehaviour, IPointerClickHandler
+public class GameView : MonoBehaviour, IView, IPointerClickHandler
 {
 	public GameContext Context;
 
+	[Space]
+	[Header("Panels")]
 	[SerializeField] private GameObject _gamePanel;
 	[SerializeField] private GameObject _videoPanel;
 	[SerializeField] private GameObject _previewPanel;
@@ -27,11 +30,16 @@ public class GameView : MonoBehaviour, IPointerClickHandler
 	[SerializeField] private AudioSource _backgroundAudioSource;
 	[SerializeField] private VideoPlayer _videoPlayer;
 
+	[Space]
+	[SerializeField] private Image _visualEffect;
+
 	#region Properties
 
 	private IVisualNovelGameService _visualNovelGameService;
 
 	#endregion
+
+	#region Default Methods
 
 	private void Awake()
 	{
@@ -49,6 +57,15 @@ public class GameView : MonoBehaviour, IPointerClickHandler
 	{
 		_visualNovelGameService.Start();
 	}
+
+	public void OnPointerClick( PointerEventData eventData )
+	{
+		_visualNovelGameService.NextIndex();
+	}
+
+	#endregion
+
+	#region UI
 
 	private void SetText(string text, string name)
 	{
@@ -86,8 +103,11 @@ public class GameView : MonoBehaviour, IPointerClickHandler
 		_videoPlayer.Play();
 	}
 
+	[ContextMenu("Game Controller/Start")]
 	private void StartGame()
 	{
+		StartCoroutine( PushVisualEffect() );
+
 		_gamePanel.SetActive(true);
 		_previewPanel.SetActive(false);
 		_videoPanel.SetActive(false);
@@ -95,6 +115,8 @@ public class GameView : MonoBehaviour, IPointerClickHandler
 
 	private void StartHeader(string text)
 	{
+		StartCoroutine( PushVisualEffect() );
+
 		_gamePanel.SetActive(false);
 		_previewPanel.SetActive(true);
 		_videoPanel.SetActive(false);
@@ -102,8 +124,41 @@ public class GameView : MonoBehaviour, IPointerClickHandler
 		_headerText.text = text;
 	}
 
-	public void OnPointerClick(PointerEventData eventData)
+	#endregion
+
+	#region Visual Effect
+
+	private IEnumerator PushVisualEffect()
 	{
-		_visualNovelGameService.NextIndex();
+		_visualEffect.gameObject.SetActive( true );
+		_visualEffect.color = new Color(0, 0, 0, 1);
+
+		Color color = _visualEffect.color;
+
+		float delta = 1f / 400f;
+		var delay = new WaitForSeconds( delta );
+
+		while(color.a > 0)
+		{
+			color.a -= delta;
+			_visualEffect.color = color;
+
+			yield return delta;
+		}
+
+		_visualEffect.gameObject.SetActive( false );
+
+		yield break;
 	}
+
+	#endregion
+
+	#region Commands
+
+	public void CommandHandler( string commandName )
+	{
+		throw new System.NotImplementedException();
+	}
+
+	#endregion
 }

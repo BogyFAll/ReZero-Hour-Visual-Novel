@@ -93,15 +93,18 @@ namespace VisualNovel.Service
 		{
 			yield return new WaitForSeconds(2f);
 
-			ActionStartVideo?.Invoke(_context.GameContextStartItem.VideoClip);
+			if(_context.GameContextStartItem.VideoClip)
+			{
+				ActionStartVideo?.Invoke( _context.GameContextStartItem.VideoClip );
 
-			yield return new WaitForSeconds((float)_context.GameContextStartItem.VideoClip.length);
+				yield return new WaitForSeconds( (float)_context.GameContextStartItem.VideoClip.length );
+			}
 
-			ActionStartPreview?.Invoke(_context.GameContextStartItem.Header);
+			ActionStartPreview?.Invoke( _context.GameContextStartItem.Header ?? string.Empty );
 
 			yield return new WaitForSeconds(3f);
 
-			ActionStartPreview?.Invoke(_context.GameContextStartItem.Name);
+			ActionStartPreview?.Invoke( _context.GameContextStartItem.Name ?? string.Empty );
 
 			yield return new WaitForSeconds(3f);
 
@@ -123,19 +126,14 @@ namespace VisualNovel.Service
 			AudioClip backgroundClip = _currentGameContextItem.BackgroundAudio != null ? _currentGameContextItem.BackgroundAudio
 									   : _context.GameContextItems.Select((value, i) => (value, i))
 																  .Where(e => e.i <= _index && e.value.BackgroundAudio != null)
-																  .LastOrDefault().value.BackgroundAudio;
+																  .LastOrDefault().value?.BackgroundAudio;
 
 			ActionBackground?.Invoke(backgroundClip);
 
-			string currentText = string.Empty;
-
-			Sprite background = _currentGameContextItem.Background != null
-								? _currentGameContextItem.Background
-								: _context.GameContextItems.Select((value, i) => (value, i))
-														   .Where(v => v.i <= _index && v.value.Background != null)
-														   .LastOrDefault().value.Background;
-
+			Sprite background = _currentGameContextItem.Background;
 			ActionNewFrame?.Invoke(_currentGameContextItem.Person, background);
+
+			string currentText = string.Empty;
 
 			if (_index == 0)
 				yield return new WaitForSeconds(2f);
