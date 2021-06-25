@@ -48,6 +48,7 @@ namespace VisualNovel.Service
 		public Action ActionStart { get; set; }
 		public Action<string> ActionStartPreview { get; set; }
 		public Action ActionExit { get; set; }
+		public Action ActionExitEvents { get; set; }
 
 		#endregion
 
@@ -60,6 +61,7 @@ namespace VisualNovel.Service
 		{
 			if(index >= _context.GameContextItems.Count)
 			{
+				ActionExitEvents?.Invoke();
 				ActionExit?.Invoke();
 
 				return;

@@ -64,7 +64,7 @@ namespace VisualNovel.Service
 		Action<string> ActionStartPreview { get; set; }
 
 		/// <summary>
-		/// Запоск цикла сцены
+		/// Запуск цикла сцены
 		/// </summary>
 		Action ActionStart { get; set; }
 
@@ -72,5 +72,10 @@ namespace VisualNovel.Service
 		/// Конец цикла сцены
 		/// </summary>
 		Action ActionExit { get; set; }
+
+		/// <summary>
+		/// События при конце цикла сцены
+		/// </summary>
+		Action ActionExitEvents { get; set; }
 	}
 }
