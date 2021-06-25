@@ -1154,7 +1154,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3217b03c1b1a9ae47b3ea172227e2a37, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1418,6 +1418,7 @@ GameObject:
   - component: {fileID: 994895556}
   - component: {fileID: 994895558}
   - component: {fileID: 994895557}
+  - component: {fileID: 994895559}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1479,6 +1480,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994895555}
   m_CullTransparentMesh: 1
+--- !u!95 &994895559
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994895555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b91e4f5f7189eb4caa7387f3648d394, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1156619858
 GameObject:
   m_ObjectHideFlags: 0

@@ -344,7 +344,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 748022528}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1623956459}
+        m_TargetAssemblyTypeName: GameView, Assembly-CSharp
+        m_MethodName: CommandHandler
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 123
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &748022528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,7 +976,7 @@ MonoBehaviour:
   _headerText: {fileID: 992686075}
   _backgroundImage: {fileID: 2142800645}
   _personPanelTransform: {fileID: 1760281085}
-  _personSpritePref: {fileID: 1358852432400214525, guid: 035faebcdb3a71c4cb8d3836966b31c8, type: 3}
+  _personSpritePref: {fileID: 6999183639138885698, guid: 6737bb20e24f0e946b723c0f775ce310, type: 3}
   _backgroundAudioSource: {fileID: 1706423314}
   _videoPlayer: {fileID: 22468876}
   _visualEffect: {fileID: 1921745066}
@@ -1806,7 +1818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 84dc286c4ac7a264fa9216d5799bbbfc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -86,9 +86,9 @@ public class GameView : MonoBehaviour, IView, IPointerClickHandler
 			Destroy(_personPanelTransform.GetChild(i).gameObject);
 
 		_backgroundImage.sprite = background ? background : _backgroundImage.sprite;
-		
-		if(person)
-			Instantiate(_personSpritePref, _personPanelTransform);
+
+		if (person)
+			Instantiate(_personSpritePref, _personPanelTransform).GetComponent<Image>().sprite = person;
 	}
 
 	private void SetBackgroundAudio(AudioClip audio)
@@ -195,7 +195,7 @@ public class GameView : MonoBehaviour, IView, IPointerClickHandler
 
 	public void CommandHandler( string commandName )
 	{
-		throw new System.NotImplementedException();
+		SceneManager.LoadScene(0);
 	}
 
 	#endregion
