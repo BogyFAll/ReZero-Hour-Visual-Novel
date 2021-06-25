@@ -47,6 +47,7 @@ namespace VisualNovel.Service
 		public Action<VideoClip> ActionStartVideo { get; set; }
 		public Action ActionStart { get; set; }
 		public Action<string> ActionStartPreview { get; set; }
+		public Action ActionExit { get; set; }
 
 		#endregion
 
@@ -57,6 +58,13 @@ namespace VisualNovel.Service
 
 		public void SetIndex(int index)
 		{
+			if(index >= _context.GameContextItems.Count)
+			{
+				ActionExit?.Invoke();
+
+				return;
+			}
+
 			if(_coroutine != null)
 			{
 				_monoBehaviour.StopCoroutine(_coroutine);

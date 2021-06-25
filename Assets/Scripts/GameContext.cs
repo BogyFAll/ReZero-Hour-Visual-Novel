@@ -35,4 +35,9 @@ namespace VisualNovel.Service
 		public string Name;
 		public VideoClip VideoClip;
 	}
+
+	public class GameContextExitItem
+	{
+		public string Header;
+	}
 }

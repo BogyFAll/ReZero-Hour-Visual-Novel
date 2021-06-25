@@ -8,13 +8,9 @@ public class VisibleBonus : MonoBehaviour
 
 	private void Start()
 	{
-		PlayerPrefs.SetString( "Level1", "true" );
-
 		if ( PlayerPrefs.GetString( "Level1" ) == "true" )
 			_visibleButton.SetActive( true );
 		else
 			_visibleButton.SetActive( false );
-
-		PlayerPrefs.DeleteAll();
 	}
 }

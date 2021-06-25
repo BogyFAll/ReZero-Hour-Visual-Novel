@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using VisualNovel.Service;
 using TMPro;
 using UnityEngine.Video;
@@ -51,6 +52,7 @@ public class GameView : MonoBehaviour, IView, IPointerClickHandler
 		_visualNovelGameService.ActionStartVideo = StartVideo;
 		_visualNovelGameService.ActionStart = StartGame;
 		_visualNovelGameService.ActionStartPreview = StartHeader;
+		_visualNovelGameService.ActionExit = Close;
 	}
 
 	private void Start()
@@ -69,6 +71,7 @@ public class GameView : MonoBehaviour, IView, IPointerClickHandler
 
 	private void SetText(string text, string name)
 	{
+		_gamePanel.SetActive(true);
 		_mainText.text = text;
 		_nameText.text = name;
 	}
@@ -124,9 +127,40 @@ public class GameView : MonoBehaviour, IView, IPointerClickHandler
 		_headerText.text = text;
 	}
 
+	private void Close()
+	{
+		StartCoroutine(ExitVisualEffect());
+	}
+
 	#endregion
 
 	#region Visual Effect
+
+	private IEnumerator ExitVisualEffect()
+	{
+		_visualEffect.gameObject.SetActive(true);
+		_visualEffect.color = new Color(0, 0, 0, 1);
+
+		Color color = _visualEffect.color;
+		color.a = 0f;
+
+		float delta = 1f / 1200f;
+		var delay = new WaitForSeconds(delta);
+
+		while (color.a <= 1)
+		{
+			color.a += delta;
+			_visualEffect.color = color;
+
+			yield return delta;
+		}
+
+		PlayerPrefs.SetString("Level1", "true");
+
+		SceneManager.LoadSceneAsync(0);
+
+		yield break;
+	}
 
 	private IEnumerator PushVisualEffect()
 	{

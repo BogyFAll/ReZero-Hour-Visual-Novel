@@ -67,5 +67,10 @@ namespace VisualNovel.Service
 		/// Запоск цикла сцены
 		/// </summary>
 		Action ActionStart { get; set; }
+
+		/// <summary>
+		/// Конец цикла сцены
+		/// </summary>
+		Action ActionExit { get; set; }
 	}
 }

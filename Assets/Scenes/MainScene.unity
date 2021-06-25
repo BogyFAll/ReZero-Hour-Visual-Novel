@@ -917,8 +917,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 25}
-  m_SizeDelta: {x: 100, y: 50}
+  m_AnchoredPosition: {x: 250, y: 25}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &465499364
 MonoBehaviour:
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 30, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1664,6 +1664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Option Game Button
       objectReference: {fileID: 0}
+    - target: {fileID: 3087562857149102004, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3087562857149102005, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1682,7 +1686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3087562857149102005, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3087562857149102005, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1690,11 +1694,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3087562857149102005, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3087562857149102005, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3087562857149102005, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1730,11 +1734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3087562857149102005, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3087562857149102005, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 3087562857149102005, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2187,6 +2191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bonus Button
       objectReference: {fileID: 0}
+    - target: {fileID: 3087562857149102004, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3087562857149102005, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2301,7 +2309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3087562857624870796, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 83755007
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3335de54106e5741acdcd27b44c1fa1, type: 3}
