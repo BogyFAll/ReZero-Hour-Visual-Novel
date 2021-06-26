@@ -18,6 +18,9 @@ namespace VisualNovel.GameScene
 
 			foreach (var item in histories)
 			{
+				if (string.IsNullOrEmpty(item.Name) && string.IsNullOrEmpty(item.Text))
+					continue;
+
 				var element = Instantiate(_historyElementPref, _content).GetComponent<HistoryElement>();
 				element.SetText(item.Name, item.Text);
 			}

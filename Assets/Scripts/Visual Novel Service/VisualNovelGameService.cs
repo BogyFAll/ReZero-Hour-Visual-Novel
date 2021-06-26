@@ -71,6 +71,8 @@ namespace VisualNovel.Service
 			if(index <= 0)
 				index = 0;
 
+			Index = index;
+
 			if (_coroutine != null)
 			{
 				_monoBehaviour.StopCoroutine(_coroutine);
@@ -78,11 +80,6 @@ namespace VisualNovel.Service
 				ActionUI?.Invoke(_currentGameContextItem.Text, _currentGameContextItem.PersonName);
 			} else
 			{
-				Index = index;
-
-				if (Index >= _context.GameContextItems.Count || Index < 0)
-					Index = index >= _context.GameContextItems.Count || index < 0 ? 0 : index;
-
 				_currentGameContextItem = _context.GameContextItems[Index];
 				_coroutine = _monoBehaviour.StartCoroutine(StartScene());
 			}
@@ -95,6 +92,12 @@ namespace VisualNovel.Service
 
 		public void LastIndex()
 		{
+			if (_coroutine != null)
+			{
+				_monoBehaviour.StopCoroutine(_coroutine);
+				_coroutine = null;
+			}
+
 			SetIndex(Index - 1);
 		}
 
@@ -151,23 +154,22 @@ namespace VisualNovel.Service
 		{
 			var delay = new WaitForSeconds(_speed);
 
-			_audioSource.clip = _currentGameContextItem.Audio;
-			_audioSource.Play();
-
 			AudioClip backgroundClip = _currentGameContextItem.BackgroundAudio != null ? _currentGameContextItem.BackgroundAudio
 									   : _context.GameContextItems.Select((value, i) => (value, i))
 																  .Where(e => e.i <= Index && e.value.BackgroundAudio != null)
 																  .LastOrDefault().value?.BackgroundAudio;
-
 			ActionBackground?.Invoke(backgroundClip);
 
-			Sprite background = _currentGameContextItem.Background;
+			_audioSource.clip = _currentGameContextItem.Audio;
+			_audioSource.Play();
+
+			Sprite background = _currentGameContextItem.Background != null ? _currentGameContextItem.Background
+								: _context.GameContextItems.Select((value, i) => (value, i))
+																  .Where(e => e.i <= Index && e.value.Background != null)
+																  .LastOrDefault().value?.Background;
 			ActionNewFrame?.Invoke(_currentGameContextItem.Person, background);
 
 			string currentText = string.Empty;
-
-			if (Index == 0)
-				yield return new WaitForSeconds(2f);
 
 			foreach (var item in _currentGameContextItem.Text.Select((value, i) => (value, i)))
 			{

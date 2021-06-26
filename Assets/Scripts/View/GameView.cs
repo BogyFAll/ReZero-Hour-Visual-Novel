@@ -218,6 +218,12 @@ namespace VisualNovel.GameScene
 				case "unvisibleList":
 					UnvisibleList();
 					break;
+				case "nextPage":
+					_visualNovelGameService.NextIndex();
+					break;
+				case "lastPage":
+					_visualNovelGameService.LastIndex();
+					break;
 			}
 		}
 
