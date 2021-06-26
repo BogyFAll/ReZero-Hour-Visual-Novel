@@ -1839,8 +1839,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainView: {fileID: 0}
+  _audioMixer: {fileID: 24100000, guid: 3a04b7fe41ab81d4f80e7f480d1c02fe, type: 2}
   _speedTextSlider: {fileID: 1526762240169515597}
   _speedText: {fileID: 1526762239845510498}
+  _backgroundSoundsSlider: {fileID: 1526762241219394045}
+  _backgroundSoundsText: {fileID: 1526762241440012740}
+  _soundsSlider: {fileID: 1526762241918766219}
+  _soundsText: {fileID: 1526762240141405770}
 --- !u!1 &1526762241208475660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,7 +1940,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0, g: 0.08463907, b: 1, a: 1}
@@ -1960,13 +1965,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1526762240269385475}
   m_HandleRect: {fileID: 1526762240664227022}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -100
   m_MaxValue: 0
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1526762241206607505}
+        m_TargetAssemblyTypeName: VisualNovel.MainScene.OptionView, Assembly-CSharp
+        m_MethodName: OnBackgroundSounds
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1526762241329290714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,7 +2697,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0, g: 0.08463907, b: 1, a: 1}
@@ -2705,13 +2722,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1526762240746248213}
   m_HandleRect: {fileID: 1526762241853748264}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -100
   m_MaxValue: 0
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1526762241206607505}
+        m_TargetAssemblyTypeName: VisualNovel.MainScene.OptionView, Assembly-CSharp
+        m_MethodName: OnSouds
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1526762241950761798
 GameObject:
   m_ObjectHideFlags: 0

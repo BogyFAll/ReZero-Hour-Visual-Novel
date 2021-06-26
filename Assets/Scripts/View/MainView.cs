@@ -18,6 +18,11 @@ namespace VisualNovel.MainScene
 		[Space]
 		[SerializeField] private GameObject _optionView;
 
+		private void Start()
+		{
+			_optionView.GetComponent<OptionView>().LoadSettings();
+		}
+
 		public void CommandHandler(string commandName)
 		{
 			switch (commandName)

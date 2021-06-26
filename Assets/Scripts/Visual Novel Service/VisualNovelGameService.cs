@@ -60,7 +60,6 @@ namespace VisualNovel.Service
 
 		public void SetIndex(int index)
 		{
-			Debug.Log(_speed);
 			if(index >= _context.GameContextItems.Count)
 			{
 				ActionExitEvents?.Invoke();

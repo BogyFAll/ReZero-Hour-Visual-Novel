@@ -10,6 +10,7 @@ using VisualNovel.Service;
 using TMPro;
 using UnityEngine.Video;
 using VisualNovel.Scene;
+using VisualNovel.MainScene;
 
 namespace VisualNovel.GameScene
 {
@@ -71,13 +72,17 @@ namespace VisualNovel.GameScene
 
 		private void Start()
 		{
+			_optionView.GetComponent<OptionView>().LoadSettings();
 			_visualNovelGameService.Start();
 		}
 
 		private void OnEnable()
 		{
-			_visualNovelGameService.SetSpeed(PlayerPrefs.GetFloat("SpeedText", 0.1f));
-			_visualNovelGameService.SetIndex(_visualNovelGameService.Index);
+			if(_IsNextFrame)
+			{
+				_visualNovelGameService.SetSpeed(PlayerPrefs.GetFloat("SpeedText", 0.1f));
+				_visualNovelGameService.SetIndex(_visualNovelGameService.Index);
+			}
 		}
 
 		public void OnPointerClick(PointerEventData eventData)
