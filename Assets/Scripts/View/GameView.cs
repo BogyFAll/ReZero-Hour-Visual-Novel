@@ -21,6 +21,7 @@ namespace VisualNovel.GameScene
 
 		[Space]
 		[Header("Panels")]
+		[SerializeField] private GameObject _optionView;
 		[SerializeField] private GameObject _gamePanel;
 		[SerializeField] private GameObject _textPanel;
 		[SerializeField] private GameObject _videoPanel;
@@ -58,7 +59,7 @@ namespace VisualNovel.GameScene
 			SceneParameters.LoadGameContext = null;
 
 			_visualNovelGameService = new VisualNovelGameService(this, Context, GetComponent<AudioSource>(), _videoPlayer);
-			_visualNovelGameService.SetSpeed(0.02f);
+			_visualNovelGameService.SetSpeed(PlayerPrefs.GetFloat("SpeedText", 0.1f));
 			_visualNovelGameService.ActionNewFrame = SetFrame;
 			_visualNovelGameService.ActionUI = SetText;
 			_visualNovelGameService.ActionBackground = SetBackgroundAudio;
@@ -71,6 +72,12 @@ namespace VisualNovel.GameScene
 		private void Start()
 		{
 			_visualNovelGameService.Start();
+		}
+
+		private void OnEnable()
+		{
+			_visualNovelGameService.SetSpeed(PlayerPrefs.GetFloat("SpeedText", 0.1f));
+			_visualNovelGameService.SetIndex(_visualNovelGameService.Index);
 		}
 
 		public void OnPointerClick(PointerEventData eventData)
@@ -224,6 +231,9 @@ namespace VisualNovel.GameScene
 				case "lastPage":
 					_visualNovelGameService.LastIndex();
 					break;
+				case "activeOptionView":
+						ActiveOptionViewCommandHandler();
+					break;
 			}
 		}
 
@@ -245,6 +255,12 @@ namespace VisualNovel.GameScene
 			_textPanel.SetActive(true);
 
 			_listHistoryPanel.DeleteContent();
+		}
+
+		private void ActiveOptionViewCommandHandler()
+		{
+			gameObject.SetActive(false);
+			_optionView.SetActive(true);
 		}
 
 		#endregion
