@@ -11,6 +11,7 @@ namespace VisualNovel.Service
 	/// </summary>
 	public interface IVisualNovelGameService
 	{
+		public int Index { get; }
 		/// <summary>
 		/// Запускает цикл сцены
 		/// </summary>
@@ -32,11 +33,23 @@ namespace VisualNovel.Service
 		/// </summary>
 		void LastIndex();
 
+
+		/// <summary>
+		/// Перейти на последний фрейм
+		/// </summary>
+		void MaxIndex();
+
 		/// <summary>
 		/// Скорость текста
 		/// </summary>
 		/// <param name="speed">Скорость в секундах</param>
 		void SetSpeed(float speed);
+
+		/// <summary>
+		/// Получает текущую историю по сцене цикла
+		/// </summary>
+		/// <returns></returns>
+		IEnumerable<IHistory> GetListFromIndex();
 
 		/// <summary>
 		/// Вывод текста и имени персонажа

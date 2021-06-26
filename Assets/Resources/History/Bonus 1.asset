@@ -955,7 +955,7 @@ MonoBehaviour:
     Person: {fileID: 0}
     Background: {fileID: 0}
     Audio: {fileID: 0}
-    BackgroundAudio: {fileID: 8300000, guid: 3217b03c1b1a9ae47b3ea172227e2a37, type: 3}
+    BackgroundAudio: {fileID: 0}
   - PersonName: 
     Text: "\u041E\u043D\u0430 \u0431\u044B\u043B\u0430 \u0432 \u0447\u0451\u0440\u043D\u043E\u043C
       \u043F\u043B\u0430\u0442\u044C\u0435, \u043B\u0438\u0446\u043E \u0437\u0430\u043A\u0440\u044B\u0432\u0430\u043B\u0430

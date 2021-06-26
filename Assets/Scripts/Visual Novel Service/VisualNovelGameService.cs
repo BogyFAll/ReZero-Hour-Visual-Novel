@@ -16,7 +16,6 @@ namespace VisualNovel.Service
 		private readonly VideoPlayer _videoPlayer;
 		private readonly GameContext _context;
 
-		private int _index;
 		private float _speed;
 		private Coroutine _coroutine;
 		private Coroutine _startCoroutine;
@@ -40,6 +39,8 @@ namespace VisualNovel.Service
 		#endregion
 
 		#region Properties
+
+		public int Index { get; private set; }
 
 		public Action<string, string> ActionUI { get; set; }
 		public Action<Sprite, Sprite> ActionNewFrame { get; set; }
@@ -67,37 +68,57 @@ namespace VisualNovel.Service
 				return;
 			}
 
-			if(_coroutine != null)
+			if(index <= 0)
+				index = 0;
+
+			if (_coroutine != null)
 			{
 				_monoBehaviour.StopCoroutine(_coroutine);
 				_coroutine = null;
 				ActionUI?.Invoke(_currentGameContextItem.Text, _currentGameContextItem.PersonName);
 			} else
 			{
-				_index = index;
+				Index = index;
 
-				if (_index >= _context.GameContextItems.Count || _index < 0)
-					_index = index >= _context.GameContextItems.Count || index < 0 ? 0 : index;
+				if (Index >= _context.GameContextItems.Count || Index < 0)
+					Index = index >= _context.GameContextItems.Count || index < 0 ? 0 : index;
 
-				_currentGameContextItem = _context.GameContextItems[_index];
+				_currentGameContextItem = _context.GameContextItems[Index];
 				_coroutine = _monoBehaviour.StartCoroutine(StartScene());
 			}
 		}
 
 		public void NextIndex()
 		{
-			SetIndex(_index + 1);
+			SetIndex(Index + 1);
 		}
 
 		public void LastIndex()
 		{
-			SetIndex(_index - 1);
+			SetIndex(Index - 1);
 		}
 
 		public void Start()
 		{
 			_startCoroutine = _monoBehaviour.StartCoroutine(StartVideo());
 		}
+
+		public void MaxIndex()
+		{
+			SetIndex(_context.GameContextItems.Count - 1);
+		}
+
+		public IEnumerable<IHistory> GetListFromIndex()
+		{
+			return _context.GameContextItems.Take(Index + 1)
+											.Select(e => new BaseHistory
+											{
+												Name = e.PersonName,
+												Text = e.Text
+											});
+		}
+
+		#region Methond
 
 		private IEnumerator StartVideo()
 		{
@@ -135,7 +156,7 @@ namespace VisualNovel.Service
 
 			AudioClip backgroundClip = _currentGameContextItem.BackgroundAudio != null ? _currentGameContextItem.BackgroundAudio
 									   : _context.GameContextItems.Select((value, i) => (value, i))
-																  .Where(e => e.i <= _index && e.value.BackgroundAudio != null)
+																  .Where(e => e.i <= Index && e.value.BackgroundAudio != null)
 																  .LastOrDefault().value?.BackgroundAudio;
 
 			ActionBackground?.Invoke(backgroundClip);
@@ -145,7 +166,7 @@ namespace VisualNovel.Service
 
 			string currentText = string.Empty;
 
-			if (_index == 0)
+			if (Index == 0)
 				yield return new WaitForSeconds(2f);
 
 			foreach (var item in _currentGameContextItem.Text.Select((value, i) => (value, i)))
@@ -164,5 +185,7 @@ namespace VisualNovel.Service
 			_coroutine = null;
 			yield break;
 		}
+
+		#endregion
 	}
 }
