@@ -10,6 +10,10 @@ public class SoundVolumeVideoPlayer	: MonoBehaviour
 
 	private void Start()
 	{
+		_videoPlayer.EnableAudioTrack(0, true);
 		_videoPlayer.SetTargetAudioSource(0, _audioSource);
+
+		_videoPlayer.Play();
+		_audioSource.Play();
 	}
 }

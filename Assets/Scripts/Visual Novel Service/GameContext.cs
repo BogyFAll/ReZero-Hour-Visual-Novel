@@ -21,7 +21,7 @@ namespace VisualNovel.Service
 		[TextArea(0, 30)]
 		public string Text;
 
-		public Sprite Person;
+		public GameObject Person;
 		public Sprite Background;
 
 		[Space]

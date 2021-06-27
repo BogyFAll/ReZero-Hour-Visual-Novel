@@ -102,7 +102,7 @@ namespace VisualNovel.GameScene
 			_nameText.text = name;
 		}
 
-		private void SetFrame(Sprite person, Sprite background)
+		private void SetFrame(GameObject person, Sprite background)
 		{
 			_IsNextFrame = true;
 
@@ -111,8 +111,8 @@ namespace VisualNovel.GameScene
 
 			_backgroundImage.sprite = background ? background : _backgroundImage.sprite;
 
-			if (person)
-				Instantiate(_personSpritePref, _personPanelTransform).GetComponent<Image>().sprite = person;
+			if (person != null)
+				Instantiate(person, _personPanelTransform);
 		}
 
 		private void SetBackgroundAudio(AudioClip audio)
@@ -131,7 +131,7 @@ namespace VisualNovel.GameScene
 			_videoPanel.SetActive(true);
 
 			_videoPlayer.clip = clip;
-			_videoPlayer.Play();
+			//_videoPlayer.Play();
 		}
 
 		[ContextMenu("Game Controller/Start")]
@@ -197,7 +197,7 @@ namespace VisualNovel.GameScene
 
 			Color color = _visualEffect.color;
 
-			float delta = 1f / 400f;
+			float delta = 1f / 700f;
 			var delay = new WaitForSeconds(delta);
 
 			while (color.a > 0)

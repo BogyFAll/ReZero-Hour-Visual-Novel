@@ -43,7 +43,7 @@ namespace VisualNovel.Service
 		public int Index { get; private set; }
 
 		public Action<string, string> ActionUI { get; set; }
-		public Action<Sprite, Sprite> ActionNewFrame { get; set; }
+		public Action<GameObject, Sprite> ActionNewFrame { get; set; }
 		public Action<AudioClip> ActionBackground { get; set; }
 		public Action<VideoClip> ActionStartVideo { get; set; }
 		public Action ActionStart { get; set; }

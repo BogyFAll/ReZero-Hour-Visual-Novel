@@ -59,7 +59,7 @@ namespace VisualNovel.Service
 		/// <summary>
 		/// ¬ывод фонового изображени€ и спрайта говор€щего персонажа
 		/// </summary>
-		Action<Sprite, Sprite> ActionNewFrame { get; set; }
+		Action<GameObject, Sprite> ActionNewFrame { get; set; }
 
 		/// <summary>
 		/// «апуск фонового звука
