@@ -173,7 +173,7 @@ namespace VisualNovel.GameScene
 			Color color = _visualEffect.color;
 			color.a = 0f;
 
-			float delta = 1f / 500f;
+			float delta = 1f / 300f;
 			var delay = new WaitForSeconds(delta);
 
 			while (color.a <= 1)
@@ -201,7 +201,7 @@ namespace VisualNovel.GameScene
 
 			Color color = _visualEffect.color;
 
-			float delta = 1f / 700f;
+			float delta = 1f / 250f;
 			var delay = new WaitForSeconds(delta);
 
 			while (color.a > 0)

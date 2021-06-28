@@ -89,7 +89,7 @@ namespace VisualNovel.MainScene
 
 			Color color = _visualEffect.color;
 
-			float delta = 1f / 500f;
+			float delta = 1f / 200f;
 			var delay = new WaitForSeconds( delta );
 
 			while ( color.a > 0 )
