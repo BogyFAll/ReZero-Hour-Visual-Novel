@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 namespace VisualNovel.MainScene
 {
@@ -29,6 +30,9 @@ namespace VisualNovel.MainScene
 		[SerializeField] private Slider _soundsSlider;
 		[SerializeField] private TextMeshProUGUI _soundsText;
 
+		[Space]
+		[SerializeField] private GameObject _mainMenuButton;
+
 		#endregion
 
 		#region Default Methods
@@ -36,6 +40,12 @@ namespace VisualNovel.MainScene
 		private void Start()
 		{
 			LoadSettings();
+		}
+
+		public void SetGameOption()
+		{
+			_mainMenuButton.SetActive( true );
+
 		}
 
 		public void LoadSettings()
@@ -64,7 +74,7 @@ namespace VisualNovel.MainScene
 
 		public void OnBackgroundSounds(System.Single value)
 		{
-			_backgroundSoundsText.text = (100 + value).ToString();
+			_backgroundSoundsText.text = ((int)(GetSound(value) * 100)).ToString();
 
 			_audioMixer.SetFloat("Background Group", value);
 
@@ -73,11 +83,16 @@ namespace VisualNovel.MainScene
 
 		public void OnSouds(System.Single value)
 		{
-			_soundsText.text = (100 + value).ToString();
+			_soundsText.text = ( (int)( GetSound( value ) * 100 ) ).ToString();
 
 			_audioMixer.SetFloat("Sounds Group", value);
 
 			PlayerPrefs.SetInt("Sounds", int.Parse(value.ToString()));
+		}
+
+		private float GetSound(float value)
+		{
+			return ( -( ( value - ( -80 ) ) / ( -80 - 0 ) ) );
 		}
 
 		#endregion
@@ -90,6 +105,9 @@ namespace VisualNovel.MainScene
 			{
 				case "activeMainMenu":
 					ActiveMainView();
+					break;
+				case "goMainMenu":
+					SceneManager.LoadScene( 0 );
 					break;
 			}
 		}

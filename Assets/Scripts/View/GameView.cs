@@ -73,6 +73,7 @@ namespace VisualNovel.GameScene
 		private void Start()
 		{
 			_optionView.GetComponent<OptionView>().LoadSettings();
+			_optionView.GetComponent<OptionView>().SetGameOption();
 			_visualNovelGameService.Start();
 		}
 
@@ -180,10 +181,13 @@ namespace VisualNovel.GameScene
 				color.a += delta;
 				_visualEffect.color = color;
 
-				yield return delta;
+				yield return delay;
 			}
 
 			PlayerPrefs.SetString("Level1", "true");
+
+			_gamePanel.SetActive( false );
+			_visualNovelGameService = null;
 
 			SceneManager.LoadScene(0);
 
@@ -266,6 +270,12 @@ namespace VisualNovel.GameScene
 		{
 			gameObject.SetActive(false);
 			_optionView.SetActive(true);
+		}
+
+		[ContextMenu("Go Final Frame")]
+		private void GoFinalFram()
+		{
+			_visualNovelGameService.MaxIndex();
 		}
 
 		#endregion

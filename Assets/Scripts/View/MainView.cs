@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using VisualNovel.Scene;
 using VisualNovel.Service;
 
@@ -16,6 +17,8 @@ namespace VisualNovel.MainScene
 		[SerializeField] private GameContext _header1Context;
 
 		[Space]
+		[SerializeField] private Image _visualEffect;
+		[SerializeField] private GameObject _buttonsPanel;
 		[SerializeField] private GameObject _optionView;
 
 		private void Start()
@@ -47,8 +50,7 @@ namespace VisualNovel.MainScene
 
 		private void BonusGameCommandHandler()
 		{
-			SceneParameters.LoadGameContext = _bonusContext;
-			SceneManager.LoadScene(1);
+			StartCoroutine( LoadGame( 1, _bonusContext ) );
 		}
 
 		private void CountiuneGameCommandHandler()
@@ -58,8 +60,7 @@ namespace VisualNovel.MainScene
 
 		private void NewGameCommandHandler()
 		{
-			SceneParameters.LoadGameContext = _header1Context;
-			SceneManager.LoadScene(1);
+			StartCoroutine( LoadGame( 1, _header1Context ) );
 		}
 
 		private void OptionGameCommandHandler()
@@ -75,6 +76,35 @@ namespace VisualNovel.MainScene
 #endif
 
 			Application.Quit();
+		}
+
+		private IEnumerator LoadGame(int sceneIndex, GameContext gameContext)
+		{
+			SceneParameters.LoadGameContext = gameContext;
+
+			_buttonsPanel.SetActive( false );
+
+			_visualEffect.GetComponent<Animator>().enabled = false;
+			_visualEffect.color = new Color( 1, 1, 1, 1 );
+
+			Color color = _visualEffect.color;
+
+			float delta = 1f / 500f;
+			var delay = new WaitForSeconds( delta );
+
+			while ( color.a > 0 )
+			{
+				color.a -= delta;
+				_visualEffect.color = color;
+
+				yield return delay;
+			}
+
+			_visualEffect.gameObject.SetActive( false );
+
+			SceneManager.LoadScene( sceneIndex );
+
+			yield break;
 		}
 
 		[ContextMenu("Reset Prefs")]
