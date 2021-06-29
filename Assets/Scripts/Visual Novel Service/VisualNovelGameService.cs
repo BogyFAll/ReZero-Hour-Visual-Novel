@@ -41,7 +41,7 @@ namespace VisualNovel.Service
 		#region Properties
 
 		public int Index { get; private set; }
-
+		public int GetMaxIndex { get => _context.GameContextItems.Count - 1; }
 		public Action<string, string> ActionUI { get; set; }
 		public Action<GameObject, Sprite> ActionNewFrame { get; set; }
 		public Action<AudioClip> ActionBackground { get; set; }
@@ -71,8 +71,6 @@ namespace VisualNovel.Service
 			if(index <= 0)
 				index = 0;
 
-			Index = index;
-
 			if (_coroutine != null)
 			{
 				_monoBehaviour.StopCoroutine(_coroutine);
@@ -80,6 +78,8 @@ namespace VisualNovel.Service
 				ActionUI?.Invoke(_currentGameContextItem.Text, _currentGameContextItem.PersonName);
 			} else
 			{
+				Index = index;
+
 				_currentGameContextItem = _context.GameContextItems[Index];
 				_coroutine = _monoBehaviour.StartCoroutine(StartScene());
 			}

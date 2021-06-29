@@ -1896,6 +1896,8 @@ MonoBehaviour:
   _personPanelTransform: {fileID: 1760281085}
   _backgroundAudioSource: {fileID: 1706423314}
   _videoPlayer: {fileID: 22468876}
+  _lastButton: {fileID: 2055568201}
+  _nextButton: {fileID: 1433351447}
   _visualEffect: {fileID: 1921745066}
 --- !u!222 &1623956460
 CanvasRenderer:
@@ -2170,7 +2172,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 735, y: -440}
-  m_SizeDelta: {x: 1470, y: 20}
+  m_SizeDelta: {x: 1470, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1672734487
 MonoBehaviour:

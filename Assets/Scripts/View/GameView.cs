@@ -43,6 +43,9 @@ namespace VisualNovel.GameScene
 		[SerializeField] private Transform _personPanelTransform;
 		[SerializeField] private AudioSource _backgroundAudioSource;
 		[SerializeField] private VideoPlayer _videoPlayer;
+		[Header( "Buttons Game Panel" )]
+		[SerializeField] private GameObject _lastButton;
+		[SerializeField] private GameObject _nextButton;
 
 		[Space]
 		[SerializeField] private Image _visualEffect;
@@ -114,6 +117,9 @@ namespace VisualNovel.GameScene
 
 			if (person != null)
 				Instantiate(person, _personPanelTransform);
+
+			_lastButton.SetActive( _visualNovelGameService.Index > 0 );
+			_nextButton.SetActive( _visualNovelGameService.Index < _visualNovelGameService.GetMaxIndex );
 		}
 
 		private void SetBackgroundAudio(AudioClip audio)
@@ -132,7 +138,6 @@ namespace VisualNovel.GameScene
 			_videoPanel.SetActive(true);
 
 			_videoPlayer.clip = clip;
-			//_videoPlayer.Play();
 		}
 
 		[ContextMenu("Game Controller/Start")]
@@ -173,7 +178,7 @@ namespace VisualNovel.GameScene
 			Color color = _visualEffect.color;
 			color.a = 0f;
 
-			float delta = 1f / 300f;
+			float delta = 1f / 30f;
 			var delay = new WaitForSeconds(delta);
 
 			while (color.a <= 1)
@@ -201,7 +206,7 @@ namespace VisualNovel.GameScene
 
 			Color color = _visualEffect.color;
 
-			float delta = 1f / 250f;
+			float delta = 1f / 25f;
 			var delay = new WaitForSeconds(delta);
 
 			while (color.a > 0)

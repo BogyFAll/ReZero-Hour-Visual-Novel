@@ -11,7 +11,16 @@ namespace VisualNovel.Service
 	/// </summary>
 	public interface IVisualNovelGameService
 	{
+		/// <summary>
+		/// Текущий индекс
+		/// </summary>
 		public int Index { get; }
+
+		/// <summary>
+		/// Максимальный индекс
+		/// </summary>
+		public int GetMaxIndex { get; }
+
 		/// <summary>
 		/// Запускает цикл сцены
 		/// </summary>
