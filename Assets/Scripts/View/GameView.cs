@@ -50,7 +50,7 @@ namespace VisualNovel.GameScene
 		[Space]
 		[SerializeField] private Image _visualEffect;
 
-		private bool _IsNextFrame = false;
+		private bool _isNextFrame = false;
 		private IVisualNovelGameService _visualNovelGameService;
 
 		#endregion
@@ -82,7 +82,7 @@ namespace VisualNovel.GameScene
 
 		private void OnEnable()
 		{
-			if(_IsNextFrame)
+			if(_isNextFrame)
 			{
 				_visualNovelGameService.SetSpeed(PlayerPrefs.GetFloat("SpeedText", 0.1f));
 				_visualNovelGameService.SetIndex(_visualNovelGameService.Index);
@@ -91,7 +91,7 @@ namespace VisualNovel.GameScene
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			if (_IsNextFrame)
+			if (_isNextFrame)
 				_visualNovelGameService.NextIndex();
 		}
 
@@ -108,7 +108,7 @@ namespace VisualNovel.GameScene
 
 		private void SetFrame(GameObject person, Sprite background)
 		{
-			_IsNextFrame = true;
+			_isNextFrame = true;
 
 			for (int i = 0; i < _personPanelTransform.childCount; i++)
 				Destroy(_personPanelTransform.GetChild(i).gameObject);
@@ -163,6 +163,7 @@ namespace VisualNovel.GameScene
 
 		private void Close()
 		{
+			_isNextFrame = false;
 			StartCoroutine(ExitVisualEffect());
 		}
 
@@ -253,7 +254,7 @@ namespace VisualNovel.GameScene
 
 		private void VisibleList()
 		{
-			_IsNextFrame = false;
+			_isNextFrame = false;
 
 			_listHistoryPanel.gameObject.SetActive(true);
 			_textPanel.SetActive(false);
@@ -263,7 +264,7 @@ namespace VisualNovel.GameScene
 
 		private void UnvisibleList()
 		{
-			_IsNextFrame = true;
+			_isNextFrame = true;
 
 			_listHistoryPanel.gameObject.SetActive(false);
 			_textPanel.SetActive(true);
