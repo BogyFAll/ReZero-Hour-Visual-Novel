@@ -15,6 +15,7 @@ MonoBehaviour:
   GameContextStartItem:
     Header: "\u0411\u043E\u043D\u0443\u0441"
     Name: "\u0421\u0435\u043C\u044C \u0438 \u0435\u0449\u0451 \u043E\u0434\u043D\u0430"
+    Author: "by \u0447\u041E\u0440\u0442"
     VideoClip: {fileID: 32900000, guid: 57e4eee06548e5c4197293209afd401f, type: 3}
   GameContextItems:
   - PersonName: 

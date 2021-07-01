@@ -83,7 +83,7 @@ namespace VisualNovel.Service
 		/// <summary>
 		/// Вывод главы и названия текста
 		/// </summary>
-		Action<string> ActionStartPreview { get; set; }
+		Action<string, string> ActionStartPreview { get; set; }
 
 		/// <summary>
 		/// Запуск цикла сцены

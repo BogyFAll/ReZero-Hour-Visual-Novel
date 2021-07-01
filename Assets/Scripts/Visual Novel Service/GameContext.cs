@@ -35,6 +35,7 @@ namespace VisualNovel.Service
 	{
 		public string Header;
 		public string Name;
+		public string Author;
 		public VideoClip VideoClip;
 	}
 

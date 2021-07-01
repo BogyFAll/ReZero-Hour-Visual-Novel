@@ -39,6 +39,7 @@ namespace VisualNovel.GameScene
 		[SerializeField] private TextMeshProUGUI _mainText;
 		[SerializeField] private TextMeshProUGUI _nameText;
 		[SerializeField] private TextMeshProUGUI _headerText;
+		[SerializeField] private TextMeshProUGUI _authorText;
 		[SerializeField] private Image _backgroundImage;
 		[SerializeField] private Transform _personPanelTransform;
 		[SerializeField] private AudioSource _backgroundAudioSource;
@@ -150,7 +151,7 @@ namespace VisualNovel.GameScene
 			_videoPanel.SetActive(false);
 		}
 
-		private void StartHeader(string text)
+		private void StartHeader(string text, string author)
 		{
 			StartCoroutine(PushVisualEffect());
 
@@ -159,6 +160,7 @@ namespace VisualNovel.GameScene
 			_videoPanel.SetActive(false);
 
 			_headerText.text = text;
+			_authorText.text = author;
 		}
 
 		private void Close()

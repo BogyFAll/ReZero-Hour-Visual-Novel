@@ -47,7 +47,7 @@ namespace VisualNovel.Service
 		public Action<AudioClip> ActionBackground { get; set; }
 		public Action<VideoClip> ActionStartVideo { get; set; }
 		public Action ActionStart { get; set; }
-		public Action<string> ActionStartPreview { get; set; }
+		public Action<string, string> ActionStartPreview { get; set; }
 		public Action ActionExit { get; set; }
 		public Action ActionExitEvents { get; set; }
 
@@ -134,13 +134,13 @@ namespace VisualNovel.Service
 				yield return new WaitForSeconds( (float)_context.GameContextStartItem.VideoClip.length );
 			}
 
-			ActionStartPreview?.Invoke( _context.GameContextStartItem.Header ?? string.Empty );
+			ActionStartPreview?.Invoke( _context.GameContextStartItem.Header ?? string.Empty, string.Empty );
 
 			yield return new WaitForSeconds(3f);
 
-			ActionStartPreview?.Invoke( _context.GameContextStartItem.Name ?? string.Empty );
+			ActionStartPreview?.Invoke( _context.GameContextStartItem.Name ?? string.Empty, _context.GameContextStartItem.Author );
 
-			yield return new WaitForSeconds(3f);
+			yield return new WaitForSeconds(5f);
 
 			ActionStart?.Invoke();
 
