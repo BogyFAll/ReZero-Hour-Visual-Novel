@@ -7,7 +7,10 @@ using UnityEngine.Video;
 
 namespace VisualNovel.Service
 {
-	public class VisualNovelGameService : IVisualNovelGameService
+	/// <summary>
+	/// Базовая реализация интерфейса IVisualNovelGameServise
+	/// </summary>
+	public class BaseVisualNovelGameService : IVisualNovelGameService
 	{
 		#region Fields
 
@@ -25,7 +28,7 @@ namespace VisualNovel.Service
 
 		#region .ctr
 
-		public VisualNovelGameService(MonoBehaviour monoBehaviour,
+		public BaseVisualNovelGameService( MonoBehaviour monoBehaviour,
 									  GameContext context,
 									  AudioSource audioSource,
 									  VideoPlayer videoPlayer)
