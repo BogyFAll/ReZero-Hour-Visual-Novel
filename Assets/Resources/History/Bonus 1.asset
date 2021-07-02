@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5534cafb46b36054f8a5bb2b45353bcb, type: 3}
   m_Name: Bonus 1
   m_EditorClassIdentifier: 
+  VisualNovelOption:
+    DelayStartVideo: 0
+    DelayHeaderText: 3
+    DelayAuthorText: 5
   GameContextStartItem:
     Header: "\u0411\u043E\u043D\u0443\u0441"
     Name: "\u0421\u0435\u043C\u044C \u0438 \u0435\u0449\u0451 \u043E\u0434\u043D\u0430"

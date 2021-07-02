@@ -9,6 +9,7 @@ namespace VisualNovel.Service
 	[CreateAssetMenu(fileName = "new Game Context", menuName = "Game Context", order = 0)]
 	public class GameContext : ScriptableObject
 	{
+		public VisualNovelOption VisualNovelOption;
 		public GameContextStartItem GameContextStartItem;
 		public List<GameContextItem> GameContextItems;
 		public GameContextExitItem GameContextExitItem;

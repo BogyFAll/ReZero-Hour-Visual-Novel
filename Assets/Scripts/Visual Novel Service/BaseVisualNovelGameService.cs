@@ -31,7 +31,7 @@ namespace VisualNovel.Service
 		public BaseVisualNovelGameService( MonoBehaviour monoBehaviour,
 									  GameContext context,
 									  AudioSource audioSource,
-									  VideoPlayer videoPlayer)
+									  VideoPlayer videoPlayer )
 		{
 			_monoBehaviour = monoBehaviour;
 			_context = context;
@@ -43,6 +43,7 @@ namespace VisualNovel.Service
 
 		#region Properties
 
+		public VisualNovelOption VisualNovelOption { get; private set; }
 		public int Index { get; private set; }
 		public int GetMaxIndex { get => _context.GameContextItems.Count - 1; }
 		public Action<string, string> ActionUI { get; set; }
@@ -55,6 +56,11 @@ namespace VisualNovel.Service
 		public Action ActionExitEvents { get; set; }
 
 		#endregion
+
+		public void SetOption(VisualNovelOption visualNovelOption)
+		{
+			VisualNovelOption = visualNovelOption;
+		}
 
 		public void SetSpeed(float speed)
 		{
@@ -128,7 +134,7 @@ namespace VisualNovel.Service
 
 		private IEnumerator StartVideo()
 		{
-			yield return new WaitForSeconds(2f);
+			yield return new WaitForSeconds( VisualNovelOption.DelayStartVideo );
 
 			if(_context.GameContextStartItem.VideoClip)
 			{
@@ -139,11 +145,11 @@ namespace VisualNovel.Service
 
 			ActionStartPreview?.Invoke( _context.GameContextStartItem.Header ?? string.Empty, string.Empty );
 
-			yield return new WaitForSeconds(3f);
+			yield return new WaitForSeconds(VisualNovelOption.DelayHeaderText);
 
 			ActionStartPreview?.Invoke( _context.GameContextStartItem.Name ?? string.Empty, _context.GameContextStartItem.Author );
 
-			yield return new WaitForSeconds(5f);
+			yield return new WaitForSeconds(VisualNovelOption.DelayAuthorText);
 
 			ActionStart?.Invoke();
 

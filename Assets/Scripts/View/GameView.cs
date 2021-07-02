@@ -64,6 +64,7 @@ namespace VisualNovel.GameScene
 			SceneParameters.LoadGameContext = null;
 
 			_visualNovelGameService = new BaseVisualNovelGameService(this, Context, GetComponent<AudioSource>(), _videoPlayer);
+			_visualNovelGameService.SetOption( Context.VisualNovelOption );
 			_visualNovelGameService.SetSpeed(PlayerPrefs.GetFloat("SpeedText", 0.1f));
 			_visualNovelGameService.ActionNewFrame = SetFrame;
 			_visualNovelGameService.ActionUI = SetText;
@@ -78,8 +79,7 @@ namespace VisualNovel.GameScene
 		{
 			_optionView.GetComponent<OptionView>().LoadSettings();
 			_optionView.GetComponent<OptionView>().SetGameOption();
-			//_visualNovelGameService.Start();
-			_visualNovelGameService.SetIndex( 240 );
+			_visualNovelGameService.Start();
 		}
 
 		private void OnEnable()

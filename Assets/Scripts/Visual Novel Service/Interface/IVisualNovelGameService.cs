@@ -12,14 +12,25 @@ namespace VisualNovel.Service
 	public interface IVisualNovelGameService
 	{
 		/// <summary>
+		/// Настроки работы сервиса
+		/// </summary>
+		VisualNovelOption VisualNovelOption { get; }
+
+		/// <summary>
 		/// Текущий индекс
 		/// </summary>
-		public int Index { get; }
+		int Index { get; }
 
 		/// <summary>
 		/// Максимальный индекс
 		/// </summary>
-		public int GetMaxIndex { get; }
+		int GetMaxIndex { get; }
+
+		/// <summary>
+		/// Устанавливает настройки рабты
+		/// </summary>
+		/// <param name="visualNovelOption"></param>
+		void SetOption( VisualNovelOption visualNovelOption );
 
 		/// <summary>
 		/// Запускает цикл сцены
