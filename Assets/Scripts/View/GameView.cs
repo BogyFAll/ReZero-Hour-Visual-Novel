@@ -80,7 +80,7 @@ namespace VisualNovel.GameScene
 			_optionView.GetComponent<OptionView>().LoadSettings();
 			_optionView.GetComponent<OptionView>().SetGameOption();
 			_visualNovelGameService.Start();
-			//_visualNovelGameService.SetIndex(100);
+			//_visualNovelGameService.SetIndex(48);
 		}
 
 		private void OnEnable()
