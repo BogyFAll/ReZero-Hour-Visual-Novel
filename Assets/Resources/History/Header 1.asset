@@ -40,7 +40,7 @@ MonoBehaviour:
       \u0442\u0435\u0431\u044F."
     Person: {fileID: 5635633927445633585, guid: 87f5c63d682392f41b78f7505b0d1c77, type: 3}
     Background: {fileID: 0}
-    Audio: {fileID: 0}
+    Audio: {fileID: 8300000, guid: 1899402d76c854840a50890a0e60594b, type: 3}
     BackgroundAudio: {fileID: 0}
   - PersonName: 
     Text: "\u0421\u0443\u0431\u0430\u0440\u0443 \u043C\u0435\u0434\u043B\u0435\u043D\u043D\u043E
@@ -112,7 +112,7 @@ MonoBehaviour:
       \u0432\u0441\u0435, \u0447\u0442\u043E \u043E\u043D \u043C\u043E\u0433 \u0432\u0441\u043F\u043E\u043C\u043D\u0438\u0442\u044C\u2026
       \u0431\u044B\u043B\u043E\u2026"
     Person: {fileID: 0}
-    Background: {fileID: 21300000, guid: d14f9c3b81e29304fbe38db319f92b1a, type: 3}
+    Background: {fileID: 21300000, guid: f223e1b3898635948ac24d811a6f03e2, type: 3}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: 
@@ -190,8 +190,8 @@ MonoBehaviour:
   - PersonName: "\u0412\u0435\u0434\u044C\u043C\u0430 \u0417\u0430\u0432\u0438\u0441\u0442\u0438"
     Text: "\u042F \u043B\u044E\u0431\u043B\u044E \u0442\u0435\u0431\u044F. \u0421\u0443\u0431\u0430\u0440\u0443?"
     Person: {fileID: 5635633927445633585, guid: 87f5c63d682392f41b78f7505b0d1c77, type: 3}
-    Background: {fileID: 21300000, guid: f223e1b3898635948ac24d811a6f03e2, type: 3}
-    Audio: {fileID: 0}
+    Background: {fileID: 21300000, guid: d14f9c3b81e29304fbe38db319f92b1a, type: 3}
+    Audio: {fileID: 8300000, guid: 1899402d76c854840a50890a0e60594b, type: 3}
     BackgroundAudio: {fileID: 0}
   - PersonName: 
     Text: "\u0421\u0435\u0440\u0434\u0446\u0435 \u0421\u0443\u0431\u0430\u0440\u0443
@@ -387,7 +387,7 @@ MonoBehaviour:
       \u0442\u0435\u0431\u044F."
     Person: {fileID: 5635633927445633585, guid: 87f5c63d682392f41b78f7505b0d1c77, type: 3}
     Background: {fileID: 0}
-    Audio: {fileID: 0}
+    Audio: {fileID: 8300000, guid: 1899402d76c854840a50890a0e60594b, type: 3}
     BackgroundAudio: {fileID: 0}
   - PersonName: 
     Text: "\u0422\u044C\u043C\u0430 \u0437\u0430\u043A\u0440\u044B\u043B\u0430 \u0435\u0433\u043E
