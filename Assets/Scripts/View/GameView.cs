@@ -66,7 +66,6 @@ namespace VisualNovel.GameScene
 
 			_visualNovelGameService = new BaseVisualNovelGameService(this, Context, GetComponent<AudioSource>(), _videoPlayer);
 			_visualNovelGameService.SetOption( Context.VisualNovelOption );
-			_visualNovelGameService.SetSpeed(PlayerPrefs.GetFloat("SpeedText", 0.1f));
 			_visualNovelGameService.ActionNewFrame = SetFrame;
 			_visualNovelGameService.ActionUI = SetText;
 			_visualNovelGameService.ActionBackground = SetBackgroundAudio;
@@ -80,6 +79,7 @@ namespace VisualNovel.GameScene
 		{
 			_optionView.GetComponent<OptionView>().LoadSettings();
 			_optionView.GetComponent<OptionView>().SetGameOption();
+			_visualNovelGameService.SetSpeed( PlayerPrefs.GetFloat( "SpeedText", 0.01f ) );
 			_visualNovelGameService.Start();
 			//_visualNovelGameService.SetIndex(48);
 		}

@@ -85,6 +85,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a768d4d0e8b1493479ad2471c83251c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSize: 50
-  MaxSize: 120
+  MinSize: 25
+  MaxSize: 70
   _bonusColor: {r: 1, g: 0.93979645, b: 0, a: 1}

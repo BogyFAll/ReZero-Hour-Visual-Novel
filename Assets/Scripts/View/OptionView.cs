@@ -53,10 +53,10 @@ namespace VisualNovel.MainScene
 			float speedText = PlayerPrefs.GetFloat("SpeedText", 0.01f);
 			_speedTextSlider.value = speedText;
 
-			float backgroundSounds = PlayerPrefs.GetInt("BackgroundSounds", -10);
+			float backgroundSounds = PlayerPrefs.GetInt("BackgroundSounds", -40);
 			_backgroundSoundsSlider.value = backgroundSounds;
 
-			float souds = PlayerPrefs.GetInt("Sounds", -10);
+			float souds = PlayerPrefs.GetInt("Sounds", -40);
 			_soundsSlider.value = souds;
 		}
 
