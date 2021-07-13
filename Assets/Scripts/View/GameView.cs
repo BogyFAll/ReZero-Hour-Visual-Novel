@@ -88,7 +88,7 @@ namespace VisualNovel.GameScene
 		{
 			if(_isNextFrame)
 			{
-				_visualNovelGameService.SetSpeed(PlayerPrefs.GetFloat("SpeedText", 0.1f));
+				_visualNovelGameService.SetSpeed(PlayerPrefs.GetFloat("SpeedText", 0.01f));
 				_visualNovelGameService.SetIndex(_visualNovelGameService.Index);
 			}
 		}

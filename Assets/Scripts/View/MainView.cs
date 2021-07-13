@@ -18,6 +18,10 @@ namespace VisualNovel.MainScene
 		[SerializeField] private GameObject _optionView;
 		[SerializeField] private HeaderPanel _headerPanel;
 
+		[Space]
+		[Header( "Audio" )]
+		[SerializeField] private AudioSource _backgroundAudio;
+
 		private void Start()
 		{
 			_optionView.GetComponent<OptionView>().LoadSettings();
@@ -72,10 +76,14 @@ namespace VisualNovel.MainScene
 			float delta = 1f / 20f;
 			var delay = new WaitForSeconds( delta );
 
+			float volumeSound = 0.05f; //Скорость приглушения звука
+
 			while ( color.a > 0 )
 			{
 				color.a -= delta;
 				_visualEffect.color = color;
+
+				_backgroundAudio.volume -= volumeSound;
 
 				yield return delay;
 			}
