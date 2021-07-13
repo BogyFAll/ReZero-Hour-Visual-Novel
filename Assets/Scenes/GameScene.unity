@@ -1552,17 +1552,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u041A\u0430\u043A\u043E\u0439-\u0442\u043E \u0442\u0435\u043A\u0441\u0442"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c487a8402e571064690bdffb5c8b58e9, type: 2}
-  m_sharedMaterial: {fileID: 7900494143718399403, guid: c487a8402e571064690bdffb5c8b58e9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9b9b679d1555087498937c5f0ab11c68, type: 2}
+  m_sharedMaterial: {fileID: 8126921561255621271, guid: 9b9b679d1555087498937c5f0ab11c68, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294941928
-  m_fontColor: {r: 0.9098039, g: 0.6117647, b: 1, a: 1}
+    rgba: 4294941159
+  m_fontColor: {r: 0.90685153, g: 0.5990566, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2145,10 +2145,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u0421\u0430\u0442\u0435\u043B\u043B\u0430"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c487a8402e571064690bdffb5c8b58e9, type: 2}
-  m_sharedMaterial: {fileID: 7900494143718399403, guid: c487a8402e571064690bdffb5c8b58e9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6b9ca4cc6b03c3e4bb9c238b7cc435c9, type: 2}
+  m_sharedMaterial: {fileID: 4127732407854571777, guid: 6b9ca4cc6b03c3e4bb9c238b7cc435c9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2172,12 +2172,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 36
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 25
-  m_fontSizeMax: 26
+  m_fontSizeMax: 36
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

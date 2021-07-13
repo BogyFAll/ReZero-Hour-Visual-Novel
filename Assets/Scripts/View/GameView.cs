@@ -11,6 +11,7 @@ using TMPro;
 using UnityEngine.Video;
 using VisualNovel.Scene;
 using VisualNovel.MainScene;
+using VisualNovel.UI;
 
 namespace VisualNovel.GameScene
 {

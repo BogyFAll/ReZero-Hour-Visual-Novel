@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using VisualNovel.GameScene;
 using VisualNovel.Service;
 
-namespace VisualNovel.GameScene
+namespace VisualNovel.UI
 {
 	public class HistoryListPanel : MonoBehaviour
 	{

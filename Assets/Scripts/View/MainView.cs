@@ -6,20 +6,17 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using VisualNovel.Scene;
 using VisualNovel.Service;
+using VisualNovel.UI;
 
 namespace VisualNovel.MainScene
 {
 	public class MainView : MonoBehaviour, IView
 	{
 		[Space]
-		[Header("Contexts")]
-		[SerializeField] private GameContext _bonusContext;
-		[SerializeField] private GameContext _header1Context;
-
-		[Space]
 		[SerializeField] private Image _visualEffect;
 		[SerializeField] private GameObject _buttonsPanel;
 		[SerializeField] private GameObject _optionView;
+		[SerializeField] private HeaderPanel _headerPanel;
 
 		private void Start()
 		{
@@ -30,14 +27,8 @@ namespace VisualNovel.MainScene
 		{
 			switch (commandName)
 			{
-				case "bonusGame":
-					BonusGameCommandHandler();
-					break;
-				case "countiuneGame":
-					CountiuneGameCommandHandler();
-					break;
-				case "newGame":
-					NewGameCommandHandler();
+				case "startGame":
+					StartGameCommandHandler();
 					break;
 				case "optionGame":
 					OptionGameCommandHandler();
@@ -48,19 +39,9 @@ namespace VisualNovel.MainScene
 			}
 		}
 
-		private void BonusGameCommandHandler()
+		private void StartGameCommandHandler()
 		{
-			StartCoroutine( LoadGame( 1, _bonusContext ) );
-		}
-
-		private void CountiuneGameCommandHandler()
-		{
-			SceneManager.LoadScene(1);
-		}
-
-		private void NewGameCommandHandler()
-		{
-			StartCoroutine( LoadGame( 1, _header1Context ) );
+			StartCoroutine( LoadGame( 1, _headerPanel.SelectedGameContext ) );
 		}
 
 		private void OptionGameCommandHandler()
@@ -84,7 +65,6 @@ namespace VisualNovel.MainScene
 
 			_buttonsPanel.SetActive( false );
 
-			_visualEffect.GetComponent<Animator>().enabled = false;
 			_visualEffect.color = new Color( 1, 1, 1, 1 );
 
 			Color color = _visualEffect.color;

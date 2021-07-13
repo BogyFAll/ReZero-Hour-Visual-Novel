@@ -6,7 +6,7 @@ using UnityEngine.Video;
 
 namespace VisualNovel.Service
 {
-	[CreateAssetMenu(fileName = "new Game Context", menuName = "Game Context", order = 0)]
+	[CreateAssetMenu(fileName = "new Game Context", menuName = "Visual Novel/Game Context", order = 0)]
 	public class GameContext : ScriptableObject
 	{
 		public VisualNovelOption VisualNovelOption;

@@ -122,7 +122,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainView, Assembly-CSharp
+        m_TargetAssemblyTypeName: VisualNovel.MainScene.MainView, Assembly-CSharp
         m_MethodName: CommandHandler
         m_Mode: 5
         m_Arguments:
@@ -130,7 +130,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: optionGame
+          m_StringArgument: newGame
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3087562857624870798
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+  m_text: "\u041D\u0430\u0447\u0430\u0442\u044C \u0438\u0433\u0440\u0443"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af1c074b0380e004abfcfa78f270f4d7, type: 2}
   m_sharedMaterial: {fileID: -3406251360474749608, guid: af1c074b0380e004abfcfa78f270f4d7, type: 2}
