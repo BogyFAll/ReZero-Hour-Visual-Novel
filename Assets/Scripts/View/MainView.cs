@@ -13,7 +13,7 @@ namespace VisualNovel.MainScene
 	public class MainView : MonoBehaviour, IView
 	{
 		[Space]
-		[SerializeField] private Image _visualEffect;
+		[SerializeField] private RawImage _visualEffect;
 		[SerializeField] private GameObject _buttonsPanel;
 		[SerializeField] private GameObject _optionView;
 		[SerializeField] private HeaderPanel _headerPanel;

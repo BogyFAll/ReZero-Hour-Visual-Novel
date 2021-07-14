@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d03bde394180e4b9a81ba3145d01d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visualEffect: {fileID: 0}
+  _visualEffect: {fileID: 994895557}
   _buttonsPanel: {fileID: 2074422953}
   _optionView: {fileID: 1453862593}
   _headerPanel: {fileID: 212193838566613406}
