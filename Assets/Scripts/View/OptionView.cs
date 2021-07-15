@@ -55,9 +55,11 @@ namespace VisualNovel.MainScene
 
 			float backgroundSounds = PlayerPrefs.GetInt("BackgroundSounds", -40);
 			_backgroundSoundsSlider.value = backgroundSounds;
+			_audioMixer.SetFloat( "Background Group", backgroundSounds );
 
-			float souds = PlayerPrefs.GetInt("Sounds", -40);
-			_soundsSlider.value = souds;
+			float sounds = PlayerPrefs.GetInt("Sounds", -40);
+			_soundsSlider.value = sounds;
+			_audioMixer.SetFloat( "Sounds Group", sounds );
 		}
 
 		#endregion
