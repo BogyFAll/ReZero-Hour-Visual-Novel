@@ -108,5 +108,11 @@ namespace VisualNovel.MainScene
 			PlayerPrefs.SetString("Level1", "true");
 			SceneManager.LoadScene(0);
 		}
+
+		[ContextMenu("Export")]
+		private void ExportContext()
+		{
+			ExportToFile.Export( _headerPanel.SelectedGameContext );
+		}
 	}
 }

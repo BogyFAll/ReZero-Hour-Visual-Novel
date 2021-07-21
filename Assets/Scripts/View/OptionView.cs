@@ -45,13 +45,14 @@ namespace VisualNovel.MainScene
 		public void SetGameOption()
 		{
 			_mainMenuButton.SetActive( true );
-
 		}
 
 		public void LoadSettings()
 		{
 			float speedText = PlayerPrefs.GetFloat("SpeedText", 0.01f);
 			_speedTextSlider.value = speedText;
+			float speed = ( (int)( ( 1 / speedText ) * 100f ) / 100f );
+			_speedText.text = speed.ToString() + " сим/сек";
 
 			float backgroundSounds = PlayerPrefs.GetInt("BackgroundSounds", -40);
 			_backgroundSoundsSlider.value = backgroundSounds;
