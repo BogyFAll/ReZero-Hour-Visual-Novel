@@ -54,11 +54,11 @@ namespace VisualNovel.MainScene
 			float speed = ( (int)( ( 1 / speedText ) * 100f ) / 100f );
 			_speedText.text = speed.ToString() + " сим/сек";
 
-			float backgroundSounds = PlayerPrefs.GetInt("BackgroundSounds", -40);
+			float backgroundSounds = PlayerPrefs.GetInt("BackgroundSounds", -25);
 			_backgroundSoundsSlider.value = backgroundSounds;
 			_audioMixer.SetFloat( "Background Group", backgroundSounds );
 
-			float sounds = PlayerPrefs.GetInt("Sounds", -40);
+			float sounds = PlayerPrefs.GetInt("Sounds", -25);
 			_soundsSlider.value = sounds;
 			_audioMixer.SetFloat( "Sounds Group", sounds );
 		}

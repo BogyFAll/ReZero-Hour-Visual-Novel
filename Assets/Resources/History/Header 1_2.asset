@@ -19,7 +19,7 @@ MonoBehaviour:
   GameContextStartItem:
     Header: "\u0410\u0440\u043A\u0430 1. \u0413\u043B\u0430\u0432\u0430 2."
     Name: "\u0412\u043B\u0430\u0441\u0442\u044C."
-    Author: 
+    Author: by Sora 101
     VideoClip: {fileID: 0}
   GameContextItems:
   - PersonName: "\u0421\u0443\u0431\u0430\u0440\u0443"
@@ -517,8 +517,8 @@ MonoBehaviour:
   - PersonName: "\u0421\u0443\u0431\u0430\u0440\u0443"
     Text: "\u0410\u0445, \u0433\u043E\u0441\u043F\u043E\u0434\u0430, \u044F \u0436\u0434\u0430\u043B
       \u0432\u0430\u0441!"
-    Person: {fileID: 0}
-    Background: {fileID: 0}
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
+    Background: {fileID: 21300000, guid: 6f0233d0259de6647874a246d6bec362, type: 3}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: 
@@ -534,7 +534,7 @@ MonoBehaviour:
     Text: "\u0427\u0442\u043E \u0442\u044B \u043D\u0435\u0441\u0435\u0448\u044C?
       \u042D\u0442\u043E \u043C\u044B \u0442\u0435\u0431\u044F \u0436\u0434\u0430\u043B\u0438!
       \u0422\u044B \u0447\u0435, \u043D\u0430\u0440\u044B\u0432\u0430\u0435\u0448\u044C\u0441\u044F?!"
-    Person: {fileID: 0}
+    Person: {fileID: 1935248892819409596, guid: b225d1a228ab44b41914c9fe67b6245e, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -546,15 +546,15 @@ MonoBehaviour:
       \u0431\u0435\u0437\u0437\u0430\u0449\u0438\u0442\u043D\u043E\u0433\u043E \u0438
       \u041A\u0420\u0410\u0421\u0418\u0412\u041E\u0413\u041E \u043C\u0443\u0436\u0447\u0438\u043D\u0443
       \u0432 \u0442\u0435\u043C\u043D\u043E\u043C \u043F\u0435\u0440\u0435\u0443\u043B\u043A\u0435!"
-    Person: {fileID: 0}
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0422\u043E\u043D"
     Text: "\u042D\u0442\u043E\u0442 \u0431\u0430\u0440\u0430\u043D \u0431\u0440\u0435\u0434\u0438\u0442,
       \u0445\u043E\u0442\u044C \u0433\u043E\u043B\u043E\u0432\u0430 \u0435\u0441\u0442\u044C
-      \u043D\u0430 \u043F\u043B\u0435\u0447\u0430\u0445."
-    Person: {fileID: 0}
+      \u043D\u0430 \u043F\u043B\u0435\u0447\u0430\u0445?"
+    Person: {fileID: 2799759787708114697, guid: 30c34b4525a421a4db4712be085ec96b, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -562,7 +562,7 @@ MonoBehaviour:
     Text: "\u0425\u043E\u0440\u043E\u0448\u043E, \u0433\u043E\u0440\u044F\u0447\u0430\u044F
       \u0433\u043E\u043B\u043E\u0432\u0430, \u0442\u044B \u0437\u043D\u0430\u0435\u0448\u044C,
       \u0447\u0442\u043E \u0434\u0435\u043B\u0430\u0442\u044C \u0434\u0430\u043B\u044C\u0448\u0435!"
-    Person: {fileID: 0}
+    Person: {fileID: 4313939433976805382, guid: a7cd615caa1234a46beb1440044f63ec, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -573,7 +573,7 @@ MonoBehaviour:
       \u0442\u0432\u043E\u0438 \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0438,
       \u0447\u0442\u043E\u0431\u044B \u0441\u0440\u0430\u0437\u0438\u0442\u044C\u0441\u044F
       \u0441 \u044D\u0442\u0438\u043C\u0438 \u043F\u0430\u0440\u043D\u044F\u043C\u0438?\u201D"
-    Person: {fileID: 0}
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -583,7 +583,7 @@ MonoBehaviour:
       \u0441\u043E\u0431\u0438\u0440\u0430\u0435\u0448\u044C\u0441\u044F \u044D\u0442\u043E
       \u0441\u0434\u0435\u043B\u0430\u0442\u044C? \u041C\u044B \u0432\u0435\u0434\u044C
       \u0441\u0442\u043E\u043B\u044C\u043A\u043E \u0441\u044E\u0434\u0430 \u0448\u043B\u0438\u2026"
-    Person: {fileID: 0}
+    Person: {fileID: 4636790011009570057, guid: 16aa59922c9a1ef41b697d2b20a7575c, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -595,19 +595,19 @@ MonoBehaviour:
       \u0442\u0430\u043A \u0447\u0442\u043E \u043D\u0430\u043C \u043D\u0443\u0436\u043D\u043E
       \u0431\u044B\u043B\u043E \u0434\u043E\u0431\u0440\u0430\u0442\u044C\u0441\u044F
       \u0441\u044E\u0434\u0430 \u043F\u0435\u0440\u0432\u044B\u043C\u0438!"
-    Person: {fileID: 0}
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u041A\u0430\u043D"
     Text: "\u042D\u0439, \u0437\u0430\u0441\u0440\u0430\u043D\u0435\u0446! \u0413\u043E\u0442\u043E\u0432\u044C\u0441\u044F!"
-    Person: {fileID: 0}
+    Person: {fileID: 6517740018348855424, guid: 2c537a253c20da44680f95631aeea844, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0413\u043E\u043B\u043E\u0441"
     Text: "\u0412\u0441\u0435 \u0441 \u0434\u043E\u0440\u043E\u0433\u0438!"
-    Person: {fileID: 0}
+    Person: {fileID: 5184633630420121496, guid: ae37ff47037e8c042b31854023a2b8b1, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -625,13 +625,13 @@ MonoBehaviour:
   - PersonName: "\u0424\u0435\u043B\u0442"
     Text: "\u041E\u0442\u043E\u0439\u0434\u0438\u0442\u0435 \u0441 \u0434\u043E\u0440\u043E\u0433\u0438,
       \u043C\u0430\u043B\u044C\u0447\u0438\u043A\u0438!"
-    Person: {fileID: 0}
+    Person: {fileID: 5184633630420121496, guid: ae37ff47037e8c042b31854023a2b8b1, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0421\u0443\u0431\u0430\u0440\u0443"
     Text: "\u041D\u0435\u0442, \u0430\u0445 \u0442\u044B \u0436, \u043C\u0435\u043B\u043A\u0430\u044F!"
-    Person: {fileID: 0}
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -647,19 +647,19 @@ MonoBehaviour:
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0424\u0435\u043B\u0442"
     Text: "\u041F\u0440\u043E\u0441\u0442\u0438~!"
-    Person: {fileID: 0}
+    Person: {fileID: 3110635048023627246, guid: 879b2db6dfef18447ba34de464212b4f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
-  - PersonName: "\u0421\u0430\u0442\u0435\u043B\u043B\u0430:"
+  - PersonName: "\u0421\u0430\u0442\u0435\u043B\u043B\u0430"
     Text: "\u041E\u0439, \u0421\u0443\u0431\u0430\u0440\u0443!\r\n"
-    Person: {fileID: 0}
+    Person: {fileID: 4636790011009570057, guid: 16aa59922c9a1ef41b697d2b20a7575c, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0421\u0443\u0431\u0430\u0440\u0443"
     Text: "\u0422\u044B \u043D\u0435 \u0443\u0439\u0434\u0435\u0448\u044C!"
-    Person: {fileID: 0}
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -705,7 +705,7 @@ MonoBehaviour:
       \u0441 \u0442\u0430\u043A\u043E\u0439 \u0441\u0438\u043B\u043E\u0439, \u0447\u0442\u043E
       \u043C\u043E\u0436\u043D\u043E \u0441\u0431\u0438\u0442\u044C \u043C\u0435\u0434\u0432\u0435\u0434\u044F
       \u0441 \u043D\u043E\u0433."
-    Person: {fileID: 0}
+    Person: {fileID: 2962811362418550032, guid: cace1f24c8b619e4bb2a531ee3d88333, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -719,7 +719,7 @@ MonoBehaviour:
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0421\u0443\u0431\u0430\u0440\u0443"
     Text: "\u0412\u043E\u0442\u2026 \u0447\u0435\u0440\u0442\u2026"
-    Person: {fileID: 0}
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -727,7 +727,7 @@ MonoBehaviour:
     Text: "\u0422\u0430\u043A \u043B\u0435\u0433\u043A\u043E \u0432\u043E\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043B\u0441\u044F
       \u0412\u043B\u0430\u0441\u0442\u044C\u044E \u041B\u0435\u043D\u0438\u2026 \u0421\u0443\u0431\u0430\u0440\u0443,
       \u0442\u044B \u043F\u043E\u0442\u0440\u044F\u0441\u0430\u044E\u0449\u0438\u0439!"
-    Person: {fileID: 0}
+    Person: {fileID: 70973275975943755, guid: 47304cc0f9aca4e42ae11ab6536fc87c, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -742,7 +742,7 @@ MonoBehaviour:
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0421\u0443\u0431\u0430\u0440\u0443"
     Text: "\u042D\u0442\u043E\u2026 \u0421\u0438\u043B\u0430 \u041F\u0435\u0442\u0435\u043B\u044C\u0433\u0435\u0439\u0437\u0435?.."
-    Person: {fileID: 0}
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -767,14 +767,14 @@ MonoBehaviour:
   - PersonName: "\u041A\u0430\u043D"
     Text: "\u0427\u0435\u0440\u0442, \u0447\u0442\u043E \u044D\u0442\u043E \u0431\u044B\u043B\u043E?..
       \u041C\u0430\u0433\u0438\u044F!?"
-    Person: {fileID: 0}
+    Person: {fileID: 1466458625264736946, guid: b7b4c41a61eefc6478dc8575eea7fe78, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0427\u0438\u043D"
     Text: "\u042D\u0442\u043E\u0442 \u043F\u0430\u0440\u0435\u043D\u044C \u0432\u043E\u043B\u0448\u0435\u0431\u043D\u0438\u043A?
       \u0422\u044B \u0448\u0443\u0442\u0438\u0448\u044C!?"
-    Person: {fileID: 0}
+    Person: {fileID: 795750476932183225, guid: 65f4029ceb85adc41a6fa678eabf3839, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -793,13 +793,13 @@ MonoBehaviour:
       \u0410\u0445 \u0434\u0430, \u0432\u044B \u0445\u043E\u0442\u0435\u043B\u0438
       \u043C\u0435\u043D\u044F \u043E\u0433\u0440\u0430\u0431\u0438\u0442\u044C,
       \u0432\u0435\u0440\u043D\u043E?"
-    Person: {fileID: 0}
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u041A\u0430\u043D"
     Text: "\u041D\u0443 \u0434\u0430\u2026"
-    Person: {fileID: 0}
+    Person: {fileID: 4128293197210368515, guid: a622546fea4cc964a85c20c6b5a51c63, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -822,7 +822,7 @@ MonoBehaviour:
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0422\u043E\u043D"
     Text: "\u041D\u0435 \u0434\u0435\u0440\u0437\u0430\u0439, \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0438\u0439\u2026"
-    Person: {fileID: 0}
+    Person: {fileID: 7918324477097683039, guid: 6ae395a65179274429f5528f2100536f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -839,7 +839,7 @@ MonoBehaviour:
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0421\u0443\u0431\u0430\u0440\u0443"
     Text: "\u0415\u0449\u0435 \u043E\u0434\u0438\u043D \u043C\u0438\u043D\u0443\u0441!"
-    Person: {fileID: 0}
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -853,14 +853,15 @@ MonoBehaviour:
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0421\u0443\u0431\u0430\u0440\u0443"
-    Text: "\u0412\u0442\u043E\u0440\u043E\u0439\u2026 \u0410\u0445, \u0445\u0435\u0442-\u0442\u0440\u0438\u043A!"
-    Person: {fileID: 0}
+    Text: "\u0412\u0442\u043E\u0440\u043E\u0439\u2026 \u0410 \u0432\u043E\u0442 \u0438
+      \u0445\u0435\u0442-\u0442\u0440\u0438\u043A!"
+    Person: {fileID: 4905961514989417000, guid: 4a1d97e1317fcd44ca052b7f5b83201f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
   - PersonName: "\u0427\u0438\u043D"
-    Text: "\u0421\u0432\u043E\u043B\u043E\u0447\u044C!"
-    Person: {fileID: 0}
+    Text: "\u0421\u0432\u043E\u043B\u043E\u0447\u044C!.."
+    Person: {fileID: 2584264035612882801, guid: ded7fc6ca55be4b459cda07638b0dcff, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
@@ -3377,7 +3378,7 @@ MonoBehaviour:
   - PersonName: "\u0424\u0435\u043B\u0442"
     Text: "\u041A\u0430\u043A\u043E\u0433\u043E \u0447\u0435\u0440\u0442\u0430?!
       \u0417\u0430\u0447\u0435\u043C \u0442\u044B \u0432\u0435\u0440\u043D\u0443\u043B\u0441\u044F?!"
-    Person: {fileID: 0}
+    Person: {fileID: 1621037542529006794, guid: a97c55522d43cb0429173cc97dbbc53f, type: 3}
     Background: {fileID: 0}
     Audio: {fileID: 0}
     BackgroundAudio: {fileID: 0}
