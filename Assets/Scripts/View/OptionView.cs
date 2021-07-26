@@ -54,11 +54,11 @@ namespace VisualNovel.MainScene
 			float speed = ( (int)( ( 1 / speedText ) * 100f ) / 100f );
 			_speedText.text = speed.ToString() + " сим/сек";
 
-			float backgroundSounds = PlayerPrefs.GetInt("BackgroundSounds", -25);
+			float backgroundSounds = PlayerPrefs.GetInt("BackgroundSounds", -10);
 			_backgroundSoundsSlider.value = backgroundSounds;
 			_audioMixer.SetFloat( "Background Group", backgroundSounds );
 
-			float sounds = PlayerPrefs.GetInt("Sounds", -25);
+			float sounds = PlayerPrefs.GetInt("Sounds", 0);
 			_soundsSlider.value = sounds;
 			_audioMixer.SetFloat( "Sounds Group", sounds );
 		}
@@ -110,7 +110,7 @@ namespace VisualNovel.MainScene
 					ActiveMainView();
 					break;
 				case "goMainMenu":
-					SceneManager.LoadScene( 0 );
+					SceneManager.LoadScene( 1 );
 					break;
 			}
 		}

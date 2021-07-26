@@ -235,7 +235,7 @@ namespace VisualNovel.GameScene
 			switch (commandName)
 			{
 				case "mainMenu":
-					SceneManager.LoadScene(0);
+					SceneManager.LoadScene(1);
 					break;
 				case "visibleList":
 					VisibleList();

@@ -45,7 +45,7 @@ namespace VisualNovel.MainScene
 
 		private void StartGameCommandHandler()
 		{
-			StartCoroutine( LoadGame( 1, _headerPanel.SelectedGameContext ) );
+			StartCoroutine( LoadGame( 2, _headerPanel.SelectedGameContext ) );
 		}
 
 		private void OptionGameCommandHandler()
@@ -99,14 +99,14 @@ namespace VisualNovel.MainScene
 		private void ResetPrefs()
 		{
 			PlayerPrefs.DeleteAll();
-			SceneManager.LoadScene(0);
+			SceneManager.LoadScene(1);
 		}
 
 		[ContextMenu("Add Prefs")]
 		private void AddPrefs()
 		{
 			PlayerPrefs.SetString("Level1", "true");
-			SceneManager.LoadScene(0);
+			SceneManager.LoadScene(1);
 		}
 
 		[ContextMenu("Export")]
