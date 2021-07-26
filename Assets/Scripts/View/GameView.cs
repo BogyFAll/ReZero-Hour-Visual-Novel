@@ -81,7 +81,7 @@ namespace VisualNovel.GameScene
 			_optionView.GetComponent<OptionView>().SetGameOption();
 			_visualNovelGameService.SetSpeed( PlayerPrefs.GetFloat( "SpeedText", 0.01f ) );
 			_visualNovelGameService.Start();
-			//_visualNovelGameService.SetIndex( 370 );
+			//_visualNovelGameService.SetIndex( 367 );
 		}
 
 		private void OnEnable()
@@ -194,8 +194,6 @@ namespace VisualNovel.GameScene
 
 				yield return delay;
 			}
-
-			PlayerPrefs.SetString("Level1", "true");
 
 			_gamePanel.SetActive( false );
 			_visualNovelGameService = null;
