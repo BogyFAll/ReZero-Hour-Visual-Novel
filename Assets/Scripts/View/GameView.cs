@@ -198,7 +198,7 @@ namespace VisualNovel.GameScene
 			_gamePanel.SetActive( false );
 			_visualNovelGameService = null;
 
-			SceneManager.LoadScene(0);
+			SceneManager.LoadScene(1);
 
 			yield break;
 		}
