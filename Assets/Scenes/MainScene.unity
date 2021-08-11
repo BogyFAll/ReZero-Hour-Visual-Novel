@@ -9060,6 +9060,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0de335fb709fc5f4ba78a1836d9579f8, type: 2}
   - {fileID: 11400000, guid: c4344fe6c62857a4b83cc0256a7ae6b4, type: 2}
   - {fileID: 11400000, guid: 72a2bdd74b255df4398c729c3c81969d, type: 2}
+  - {fileID: 11400000, guid: 9688dad17ec1f704c83076341163cde7, type: 2}
   _footerPanel: {fileID: 212193840005682792}
   _leftArrow: {fileID: 212193839256504334}
   _rightArrow: {fileID: 212193840104135186}
