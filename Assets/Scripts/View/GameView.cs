@@ -22,7 +22,7 @@ namespace VisualNovel.GameScene
 		public GameContext Context;
 
 		[Space]
-		[Header("Panels")]
+		[Header( "Panels" )]
 		[SerializeField] private GameObject _optionView;
 		[SerializeField] private GameObject _gamePanel;
 		[SerializeField] private GameObject _textPanel;
@@ -31,12 +31,12 @@ namespace VisualNovel.GameScene
 		[SerializeField] private HistoryListPanel _listHistoryPanel;
 
 		[Space]
-		[Header("Prefabs")]
+		[Header( "Prefabs" )]
 		[SerializeField] private GameObject _personSpritePref;
 		[SerializeField] private GameObject _historyElementPref;
 
 		[Space]
-		[Header("UI")]
+		[Header( "UI" )]
 		[SerializeField] private TextMeshProUGUI _mainText;
 		[SerializeField] private TextMeshProUGUI _nameText;
 		[SerializeField] private TextMeshProUGUI _headerText;
@@ -64,7 +64,7 @@ namespace VisualNovel.GameScene
 			Context = SceneParameters.LoadGameContext ?? Context;
 			SceneParameters.LoadGameContext = null;
 
-			_visualNovelGameService = new BaseVisualNovelGameService(this, Context, GetComponent<AudioSource>(), _videoPlayer);
+			_visualNovelGameService = new BaseVisualNovelGameService( this, Context, GetComponent<AudioSource>(), _videoPlayer );
 			_visualNovelGameService.SetOption( Context.VisualNovelOption );
 			_visualNovelGameService.ActionNewFrame = SetFrame;
 			_visualNovelGameService.ActionUI = SetText;
@@ -80,22 +80,22 @@ namespace VisualNovel.GameScene
 			_optionView.GetComponent<OptionView>().LoadSettings();
 			_optionView.GetComponent<OptionView>().SetGameOption();
 			_visualNovelGameService.SetSpeed( PlayerPrefs.GetFloat( "SpeedText", 0.01f ) );
-			_visualNovelGameService.Start();
-			//_visualNovelGameService.SetIndex( 367 );
+			//_visualNovelGameService.Start();
+			_visualNovelGameService.SetIndex( 521 );
 		}
 
 		private void OnEnable()
 		{
-			if(_isNextFrame)
+			if ( _isNextFrame )
 			{
-				_visualNovelGameService.SetSpeed(PlayerPrefs.GetFloat("SpeedText", 0.01f));
-				_visualNovelGameService.SetIndex(_visualNovelGameService.Index);
+				_visualNovelGameService.SetSpeed( PlayerPrefs.GetFloat( "SpeedText", 0.01f ) );
+				_visualNovelGameService.SetIndex( _visualNovelGameService.Index );
 			}
 		}
 
-		public void OnPointerClick(PointerEventData eventData)
+		public void OnPointerClick( PointerEventData eventData )
 		{
-			if (_isNextFrame)
+			if ( _isNextFrame )
 				_visualNovelGameService.NextIndex();
 		}
 
@@ -103,64 +103,64 @@ namespace VisualNovel.GameScene
 
 		#region Actions
 
-		private void SetText(string text, string name)
+		private void SetText( string text, string name )
 		{
-			_gamePanel.SetActive(true);
+			_gamePanel.SetActive( true );
 			_mainText.text = text;
 			_nameText.text = name;
 		}
 
-		private void SetFrame(GameObject person, Sprite background)
+		private void SetFrame( GameObject person, Sprite background )
 		{
 			_isNextFrame = true;
 
-			for (int i = 0; i < _personPanelTransform.childCount; i++)
-				Destroy(_personPanelTransform.GetChild(i).gameObject);
+			for ( int i = 0; i < _personPanelTransform.childCount; i++ )
+				Destroy( _personPanelTransform.GetChild( i ).gameObject );
 
 			_backgroundImage.sprite = background ? background : _backgroundImage.sprite;
 
-			if (person != null)
-				Instantiate(person, _personPanelTransform);
+			if ( person != null )
+				Instantiate( person, _personPanelTransform );
 
 			_lastButton.SetActive( _visualNovelGameService.Index > 0 );
 			_nextButton.SetActive( _visualNovelGameService.Index < _visualNovelGameService.GetMaxIndex );
 		}
 
-		private void SetBackgroundAudio(AudioClip audio)
+		private void SetBackgroundAudio( AudioClip audio )
 		{
-			if (audio && audio != _backgroundAudioSource.clip)
+			if ( audio && audio != _backgroundAudioSource.clip )
 			{
 				_backgroundAudioSource.clip = audio;
 				_backgroundAudioSource.Play();
 			}
 		}
 
-		private void StartVideo(VideoClip clip)
+		private void StartVideo( VideoClip clip )
 		{
-			_gamePanel.SetActive(false);
-			_previewPanel.SetActive(false);
-			_videoPanel.SetActive(true);
+			_gamePanel.SetActive( false );
+			_previewPanel.SetActive( false );
+			_videoPanel.SetActive( true );
 
 			_videoPlayer.clip = clip;
 		}
 
-		[ContextMenu("Game Controller/Start")]
+		[ContextMenu( "Game Controller/Start" )]
 		private void StartGame()
 		{
-			StartCoroutine(PushVisualEffect());
+			StartCoroutine( PushVisualEffect() );
 
-			_gamePanel.SetActive(true);
-			_previewPanel.SetActive(false);
-			_videoPanel.SetActive(false);
+			_gamePanel.SetActive( true );
+			_previewPanel.SetActive( false );
+			_videoPanel.SetActive( false );
 		}
 
-		private void StartHeader(string text, string author)
+		private void StartHeader( string text, string author )
 		{
-			StartCoroutine(PushVisualEffect());
+			StartCoroutine( PushVisualEffect() );
 
-			_gamePanel.SetActive(false);
-			_previewPanel.SetActive(true);
-			_videoPanel.SetActive(false);
+			_gamePanel.SetActive( false );
+			_previewPanel.SetActive( true );
+			_videoPanel.SetActive( false );
 
 			_headerText.text = text;
 			_authorText.text = author;
@@ -169,7 +169,7 @@ namespace VisualNovel.GameScene
 		private void Close()
 		{
 			_isNextFrame = false;
-			StartCoroutine(ExitVisualEffect());
+			StartCoroutine( ExitVisualEffect() );
 		}
 
 		#endregion
@@ -178,16 +178,16 @@ namespace VisualNovel.GameScene
 
 		private IEnumerator ExitVisualEffect()
 		{
-			_visualEffect.gameObject.SetActive(true);
-			_visualEffect.color = new Color(0, 0, 0, 1);
+			_visualEffect.gameObject.SetActive( true );
+			_visualEffect.color = new Color( 0, 0, 0, 1 );
 
 			Color color = _visualEffect.color;
 			color.a = 0f;
 
 			float delta = 1f / 30f;
-			var delay = new WaitForSeconds(delta);
+			var delay = new WaitForSeconds( delta );
 
-			while (color.a <= 1)
+			while ( color.a <= 1 )
 			{
 				color.a += delta;
 				_visualEffect.color = color;
@@ -198,22 +198,22 @@ namespace VisualNovel.GameScene
 			_gamePanel.SetActive( false );
 			_visualNovelGameService = null;
 
-			SceneManager.LoadScene(1);
+			SceneManager.LoadScene( 1 );
 
 			yield break;
 		}
 
 		private IEnumerator PushVisualEffect()
 		{
-			_visualEffect.gameObject.SetActive(true);
-			_visualEffect.color = new Color(0, 0, 0, 1);
+			_visualEffect.gameObject.SetActive( true );
+			_visualEffect.color = new Color( 0, 0, 0, 1 );
 
 			Color color = _visualEffect.color;
 
 			float delta = 1f / 25f;
-			var delay = new WaitForSeconds(delta);
+			var delay = new WaitForSeconds( delta );
 
-			while (color.a > 0)
+			while ( color.a > 0 )
 			{
 				color.a -= delta;
 				_visualEffect.color = color;
@@ -221,7 +221,7 @@ namespace VisualNovel.GameScene
 				yield return delay;
 			}
 
-			_visualEffect.gameObject.SetActive(false);
+			_visualEffect.gameObject.SetActive( false );
 
 			yield break;
 		}
@@ -230,12 +230,12 @@ namespace VisualNovel.GameScene
 
 		#region Commands
 
-		public void CommandHandler(string commandName)
+		public void CommandHandler( string commandName )
 		{
-			switch (commandName)
+			switch ( commandName )
 			{
 				case "mainMenu":
-					SceneManager.LoadScene(1);
+					SceneManager.LoadScene( 1 );
 					break;
 				case "visibleList":
 					VisibleList();
@@ -250,7 +250,7 @@ namespace VisualNovel.GameScene
 					_visualNovelGameService.LastIndex();
 					break;
 				case "activeOptionView":
-						ActiveOptionViewCommandHandler();
+					ActiveOptionViewCommandHandler();
 					break;
 			}
 		}
@@ -259,29 +259,29 @@ namespace VisualNovel.GameScene
 		{
 			_isNextFrame = false;
 
-			_listHistoryPanel.gameObject.SetActive(true);
-			_textPanel.SetActive(false);
+			_listHistoryPanel.gameObject.SetActive( true );
+			_textPanel.SetActive( false );
 
-			_listHistoryPanel.VisibleResult(_visualNovelGameService.GetListFromIndex());
+			_listHistoryPanel.VisibleResult( _visualNovelGameService.GetListFromIndex() );
 		}
 
 		private void UnvisibleList()
 		{
 			_isNextFrame = true;
 
-			_listHistoryPanel.gameObject.SetActive(false);
-			_textPanel.SetActive(true);
+			_listHistoryPanel.gameObject.SetActive( false );
+			_textPanel.SetActive( true );
 
 			_listHistoryPanel.DeleteContent();
 		}
 
 		private void ActiveOptionViewCommandHandler()
 		{
-			gameObject.SetActive(false);
-			_optionView.SetActive(true);
+			gameObject.SetActive( false );
+			_optionView.SetActive( true );
 		}
 
-		[ContextMenu("Go Final Frame")]
+		[ContextMenu( "Go Final Frame" )]
 		private void GoFinalFram()
 		{
 			_visualNovelGameService.MaxIndex();
