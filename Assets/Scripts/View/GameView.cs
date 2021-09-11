@@ -80,9 +80,9 @@ namespace VisualNovel.GameScene
 			_optionView.GetComponent<OptionView>().LoadSettings();
 			_optionView.GetComponent<OptionView>().SetGameOption();
 			_visualNovelGameService.SetSpeed( PlayerPrefs.GetFloat( "SpeedText", 0.01f ) );
-			//_visualNovelGameService.Start();
-			_visualNovelGameService.SetIndex( 332 );
-		}
+            _visualNovelGameService.Start();
+            //_visualNovelGameService.SetIndex( 332 );
+        }
 
 		private void OnEnable()
 		{
